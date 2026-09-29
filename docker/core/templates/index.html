@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Smart Gym Workout Logger</title>
+
+</head>
+
+<body>
+
+    <h1>Smart Gym Workout Logger</h1>
+
+    <hr>
+
+    <a href="/add/">
+        Add New Member
+    </a>
+
+    <hr>
+
+    {% for member in members %}
+
+        <h2>{{ member.name }}</h2>
+
+        <p>Age: {{ member.age }}</p>
+
+        <p>Height: {{ member.height }} cm</p>
+
+        <p>Weight: {{ member.weight }} kg</p>
+
+        <p>BMI: {{ member.bmi }}</p>
+
+       <a href="/member/{{ member.id }}/workout/add/">
+    Add Workout
+</a>
+
+|
+
+<a href="/delete/{{ member.id }}/">
+    Delete User
+</a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+
+</html>
